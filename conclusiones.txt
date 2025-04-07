@@ -1,0 +1,52 @@
+
+# 📋 Conclusiones de las pruebas automatizadas: SauceDemo UI & Demoblaze API
+
+## ✅ Proyecto 1: Prueba UI End-to-End – SauceDemo
+
+**Resumen del escenario probado:**
+- Inicio de sesión exitoso con usuario válido.
+- Agregado de dos productos al carrito.
+- Finalización del proceso de compra con datos ficticios.
+- Verificación del mensaje de éxito al completar la orden.
+
+**Resultado:** ✅ Prueba exitosa
+
+**Duración total:** 24.6 segundos  
+**Estado:** 1 prueba ejecutada – 100% pasada
+
+**Hallazgos:**
+- El flujo completo de compra en SauceDemo fue exitoso.
+- Todos los pasos se ejecutaron sin errores ni excepciones.
+- El tiempo de ejecución fue razonable para un flujo de E2E.
+- Validación correcta del mensaje de confirmación de orden.
+
+---
+
+## 🔐 Proyecto 2: Pruebas de API – Demoblaze Login/Signup
+
+**Escenarios cubiertos:**
+1. Registro de nuevo usuario.
+2. Intento de registro con usuario existente.
+3. Inicio de sesión con credenciales válidas.
+4. Inicio de sesión con credenciales inválidas.
+
+**Resultado:** ✅ Todas las pruebas pasaron correctamente  
+**Duración total:** 0.9 segundos  
+**Estado:** 4 pruebas ejecutadas – 100% pasadas
+
+**Hallazgos:**
+- El API respondió correctamente para todos los escenarios esperados.
+- Se validaron respuestas exitosas (`status 200`) y mensajes de error como `'This user already exist.'` y `'Wrong password.'`.
+- Se confirmó que el `Auth_token` se puede extraer correctamente del cuerpo de la respuesta en texto plano.
+
+---
+
+## 🧾 Conclusión General
+
+- Ambos flujos (UI y API) están correctamente automatizados y validados.
+- No se detectaron fallos ni errores durante la ejecución.
+- Los tiempos de respuesta fueron óptimos.
+- Se validaron múltiples escenarios de negocio tanto visuales como de backend.
+- Las pruebas pueden integrarse fácilmente a un pipeline de integración continua (CI/CD) con Cypress + Mochawesome.
+
+📈 **Calificación final de calidad del flujo probado:** ⭐️⭐️⭐️⭐️⭐️ (5/5)
