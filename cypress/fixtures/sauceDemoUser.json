@@ -1,0 +1,10 @@
+{
+  "username": "standard_user",
+  "password": "secret_sauce",
+  "firstName": "John",
+  "lastName": "Doe",
+  "postalCode": "90210",
+  "product1": "Sauce Labs Backpack",
+  "product2": "Sauce Labs Bike Light",
+  "orderMessage": "Thank you for your order!"
+}
