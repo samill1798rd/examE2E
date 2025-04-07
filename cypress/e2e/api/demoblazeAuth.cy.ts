@@ -18,7 +18,6 @@ describe('Demoblaze API Tests - Signup & Login', () => {
       failOnStatusCode: false
     }).then((response) => {
       expect(response.status).to.eq(200);
-    //   console.log('Response Body:', response.body);
     });
   });
 

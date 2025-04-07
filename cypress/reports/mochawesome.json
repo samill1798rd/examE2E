@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-07T04:29:18.436Z",
+    "end": "2025-04-07T04:29:19.466Z",
+    "duration": 1030,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "267e1138-8e8b-4b2e-8d37-d9c3f1dac1a1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\demoblazeAuth.cy.ts",
+      "file": "cypress\\e2e\\api\\demoblazeAuth.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7b78d295-224a-4fc8-9f69-2973fd6e1aed",
+          "title": "Demoblaze API Tests - Signup & Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a new user (signup)",
+              "fullTitle": "Demoblaze API Tests - Signup & Login Create a new user (signup)",
+              "timedOut": null,
+              "duration": 391,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'POST',\n    url: `${baseUrl}/signup`,\n    body: {\n        username: randomUser,\n        password: password\n    },\n    failOnStatusCode: false\n}).then((response) => {\n    expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "059cc463-ab85-43aa-ab0b-7f6c322bb2e6",
+              "parentUUID": "7b78d295-224a-4fc8-9f69-2973fd6e1aed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Try to sign up with an existing user",
+              "fullTitle": "Demoblaze API Tests - Signup & Login Try to sign up with an existing user",
+              "timedOut": null,
+              "duration": 154,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'POST',\n    url: `${baseUrl}/signup`,\n    body: {\n        username: randomUser,\n        password: password\n    },\n    failOnStatusCode: false\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body).to.have.property('errorMessage', 'This user already exist.');\n});",
+              "err": {},
+              "uuid": "d0ac5ff1-1d30-46c5-a8f3-6e33f839aa3c",
+              "parentUUID": "7b78d295-224a-4fc8-9f69-2973fd6e1aed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with correct username and password",
+              "fullTitle": "Demoblaze API Tests - Signup & Login Login with correct username and password",
+              "timedOut": null,
+              "duration": 216,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'POST',\n    url: `${baseUrl}/login`,\n    body: {\n        username: randomUser,\n        password: password\n    },\n    failOnStatusCode: false\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    const tokenString = response.body;\n    // Extract the token after 'Auth_token: '\n    const token = tokenString.replace('Auth_token: ', '');\n    // assert it exists\n    expect(token).to.not.be.empty;\n});",
+              "err": {},
+              "uuid": "105f1ea5-5739-45f1-adbb-8e6c7e776149",
+              "parentUUID": "7b78d295-224a-4fc8-9f69-2973fd6e1aed",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login with incorrect username and password",
+              "fullTitle": "Demoblaze API Tests - Signup & Login Login with incorrect username and password",
+              "timedOut": null,
+              "duration": 173,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n    method: 'POST',\n    url: `${baseUrl}/login`,\n    body: {\n        username: 'test',\n        password: password\n    },\n    failOnStatusCode: false\n}).then((response) => {\n    expect(response.status).to.eq(200);\n    console;\n    expect(response.body).to.have.property('errorMessage', 'Wrong password.');\n});",
+              "err": {},
+              "uuid": "05f90c29-85e7-44d6-b1a0-3c00e9c2d842",
+              "parentUUID": "7b78d295-224a-4fc8-9f69-2973fd6e1aed",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "059cc463-ab85-43aa-ab0b-7f6c322bb2e6",
+            "d0ac5ff1-1d30-46c5-a8f3-6e33f839aa3c",
+            "105f1ea5-5739-45f1-adbb-8e6c7e776149",
+            "05f90c29-85e7-44d6-b1a0-3c00e9c2d842"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 934,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
